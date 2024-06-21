@@ -1,0 +1,54 @@
+1. Write a program on java script on how to compare two JSON have the same properties without order ? 
+ a) var obj1 = {name: "Person 1" , age:5}; b) var obj2 = { age:5, name: "Person 1"}
+
+ Solution:
+  function JSON(obj1, obj2) {
+    var obj1 = { name: "Person 1", age: 5 };
+    var obj2 = { age: 5, name: "Person 1" };
+  }
+   for (var i = 0; i < obj1Props.length; i++) {
+        var propName = obj1Props[i];
+
+        if (obj1Props[i] == obj2Props[i]) {
+            return true;
+        }
+
+        if (obj1[propName] != obj2[propName]) {
+            return false;
+        }
+    }
+
+    
+}
+
+2.Write a java script program to display all the country flags in the console,by
+ using the rest countries API URL https://restcountries.com/v3.1/all. 
+Solution:
+{
+var request = new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload=function()
+    var result=JSON.parse(request.response);
+    for(let i = 0 ; i< result.length ; i++){
+        console.log(result[i].flags);   
+
+}
+}
+
+3.Use rest countries api url and print all countries names,regions,subregion and populations
+Solution:
+{
+    var request = new XMLHttpRequest();
+    request.open("GET","https://restcountries.com/v2/all");
+    request.send();
+    request.onload=function(){
+    var result=JSON.parse(request.response);
+    for(let i = 0 ; i< result.length ; i++){
+        console.log(result[i].name);
+        console.log(result[i].region);
+        console.log(result[i].subregion); 
+        console.log(result[i].population);    
+}
+}
+}
